@@ -1,21 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import Cascader from "../views/Cascader.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    redirect: "/cascader",
+    component: () => import("../views/Cascader.vue"),
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/cascader",
+    name: "cascader",
+    component: () => import("../views/Cascader.vue"),
   },
+  {
+    path: "/loayload",
+    name: "loayload",
+    component: () => import("@/views/LoayLoad.vue"),
+  }
 ];
 
 const router = createRouter({
