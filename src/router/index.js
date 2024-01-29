@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import Cascader from "../views/Cascader.vue";
 
 const routes = [
   {
@@ -18,6 +16,16 @@ const routes = [
     path: "/loayload",
     name: "loayload",
     component: () => import("@/views/LoayLoad.vue"),
+  },
+  {
+    path: "/cascadertest",
+    name: "cascadertest",
+    component: () => import("@/views/CascaderTest.vue"),
+  },
+  {
+    path: "/cascaderconvert",
+    name: "cascaderconvert",
+    component: () => import("@/views/CascaderConvert.vue"),
   }
 ];
 
